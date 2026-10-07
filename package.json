@@ -1,0 +1,68 @@
+{
+  "name": "tiny-ics",
+  "version": "0.0.1",
+  "description": "Tiny zero-dependency iCalendar (.ics) generator for TypeScript — build RFC 5545 VCALENDAR/VEVENT strings for calendar feeds, webcal subscriptions, and \"add to calendar\" downloads. Works in Node, browsers, and edge runtimes like Cloudflare Workers.",
+  "type": "module",
+  "license": "MIT",
+  "author": "binochoi",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/binochoi/tiny-ics.git"
+  },
+  "homepage": "https://github.com/binochoi/tiny-ics#readme",
+  "bugs": {
+    "url": "https://github.com/binochoi/tiny-ics/issues"
+  },
+  "keywords": [
+    "tiny-ics",
+    "ics",
+    "ical",
+    "icalendar",
+    "rfc5545",
+    "vcalendar",
+    "vevent",
+    "calendar",
+    "ics-generator",
+    "ical-generator",
+    "calendar-export",
+    "calendar-feed",
+    "calendar-subscription",
+    "webcal",
+    "add-to-calendar",
+    "calendar-invite",
+    "event",
+    "google-calendar",
+    "apple-calendar",
+    "outlook",
+    "typescript",
+    "esm",
+    "zero-dependency",
+    "edge",
+    "cloudflare-workers",
+    "serverless",
+    "deno",
+    "bun"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.mts",
+      "import": "./dist/index.mjs"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "prepare": "obuild --stub",
+    "build:dist": "obuild",
+    "release": "pnpm build:dist && pnpm publish --ignore-scripts",
+    "clean": "rm -rf dist node_modules .turbo",
+    "lint": "oxlint ./src && tsc --noEmit",
+    "test": "vitest run"
+  },
+  "devDependencies": {
+    "obuild": "^0.4.38",
+    "typescript": "^7.0.2",
+    "vitest": "^4.1.10"
+  }
+}
